@@ -5,10 +5,10 @@
     <form method="post" class="post-form my-3">
 
         {{ form.subject.label }}
-        {{ form.subject() }}
+        {{ form.subject(class='form-control') }}
         
         {{ form.content.label }}
-        {{ font.content() }}
+        {{ font.content(class='form-control') }}
 
         <button type="submit" class="btn btn-primary">저장하기</button>
     </form>
