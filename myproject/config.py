@@ -1,3 +1,5 @@
+# export FLASK_APP=flask-board/myproject/pybo/__init__.py; flask db init
+
 import os
 
 BASE_DIR = os.path.dirname(__file__)

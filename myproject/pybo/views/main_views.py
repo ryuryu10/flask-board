@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template
-from pybo.models import Question
+from flask import Blueprint, url_for
+from werkzeug.uitls import redirect
 
 bp = Blueprint('main', __name__, url_prefix='/')
 
@@ -8,14 +8,6 @@ bp = Blueprint('main', __name__, url_prefix='/')
 def hello_pybo():
     return 'Hello, Pybo!'
 
-
 @bp.route('/')
 def index():
-    question_list = Question.query.order_by(Question.create_date.desc())
-    return render_template('question/question_list.html', question_list=question_list)
-
-@bp.route('/detail/<int:quesiton_id>/')
-def detail(quesiton_id):
-    question = Question,query.get_or_404(question_id)
-    return render_template('question/question_deatil.html', question=quesiton)
-                           
+    return redirect(url_for('question._list'))
