@@ -1,11 +1,13 @@
-from flask import Blueprintprint
+from flask import Blueprint
 
-bp = Blueprintprint('main', __name__, url_prefix='/')
+bp = Blueprint('main', __name__, url_prefix='/')
+
 
 @bp.route('/hello')
 def hello_pybo():
-    return 'Hello!!'
+    return 'Hello, Pybo!'
+
 
 @bp.route('/')
 def index():
-    return 'PYBO'
+    return 'Pybo index'
