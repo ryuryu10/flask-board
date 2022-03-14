@@ -9,7 +9,7 @@ def _list():
     return render_template('question/question_list.html', question_list=question_list)
 
 @bp.route('/detail/<int:quesiton_id>/')
-def detail(quesiton_id):
-    question = Question,query.get_or_404(question_id)
-    return render_template('question/question_deatil.html', question=quesiton)
+def detail(qusetion_id):
+    question = Question.query.get_or_404(qusetion_id)
+    return render_template('question/question_deatil.html', question=question)
                            
