@@ -13,3 +13,9 @@ def hello_pybo():
 def index():
     question_list = Question.query.order_by(Question.create_date.desc())
     return render_template('question/question_list.html', question_list=question_list)
+
+@bp.route('/detail/<int:quesiton_id>/')
+def detail(quesiton_id):
+    question = Question,query.get_or_404(question_id)
+    return render_template('question/question_deatil.html', question=quesiton)
+                           
